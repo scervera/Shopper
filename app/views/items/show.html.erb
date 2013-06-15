@@ -1,0 +1,15 @@
+<div class="ui-bar ui-bar-b">
+    <p id="notice"><%= notice %></p>
+</div>
+<ol data-role="listview">
+	<li>Name: <%= @item.name %> </li>
+	<li>Description: <%= @item.description %> </li>
+	<li>Brand: <%= @item.brand %> </li>
+	<li>Quantity: <%= @item.quantity %> </li>
+	<li>Unit:<%= @item.unit %> </li>
+	<li>Note:<%= @item.note %> </li>
+	<li>Caterory:<%= @item.category %></li>
+</ol>
+
+<p><%= link_to 'Edit Item', edit_list_item_path(@list), "data-role" => "button", "data-inline" => "true" %><%= link_to 'Shopping Lists', user_lists_path(current_user), "data-role" => "button", "data-inline" => "true" %><%= link_to 'Item List', list_path(@list), "data-role" => "button", "data-inline" => "true" %><%= link_to 'Delete', { :action => "destroy", :id => @item.id }, :method => :delete, "data-role" => "button", "data-inline" => "true"  %></p>
+

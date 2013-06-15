@@ -1,0 +1,21 @@
+
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Search lists..." data-inset="true" data-icon="delete">
+	<% @user.lists.each do |list| %>
+    <li><%= link_to list.name, user_list_path(@user, list.id)  %><%= link_to 'Delete', { :action => "destroy", :id => list.id }, :method => :delete %></li>
+	<% end %>
+</ul>
+
+<br />
+<p><%= link_to 'New List', new_user_list_url(@user) , "data-role" => "button", "data-inline" => "true" %></p>
+	
+<div id="user_nav">
+	<p id="header_notice"><%= notice %></p>
+	<% if user_signed_in? %>
+	 		<p>Logged in as: <strong><%= current_user.email %></strong></p>
+			<%= link_to 'Edit profile', edit_user_registration_path %>   |
+			<%= link_to("Logout", destroy_user_session_path, :method => :delete ) %>
+	<% else %>
+			<%= link_to "Sign up", new_user_registration_path %>   | 
+			<%= link_to "Login", new_user_session_path %>
+	<% end %>
+</div>

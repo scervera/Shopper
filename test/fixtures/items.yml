@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  brand: MyString
+  quantity: 1
+  unit: MyString
+  note: MyText
+
+two:
+  name: MyString
+  description: MyText
+  brand: MyString
+  quantity: 1
+  unit: MyString
+  note: MyText

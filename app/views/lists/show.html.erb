@@ -1,0 +1,15 @@
+<div class="ui-bar ui-bar-b">
+    <p id="notice"><%= notice %></p>
+</div>
+
+<ul data-role="listview" data-inset="true" data-icon="delete">
+	  <li>Name: <%= @list.name %></li>  
+</ul>
+
+<ul data-role="listview" data-inset="true" data-icon="delete">
+		<% @list.items.each do |item|%>
+	  		<li><%= link_to item.name, list_item_path(@list, item.id) %></li> 
+		<%end%>
+</ul>
+
+<p><%= link_to 'Edit List Name', edit_user_list_path(@user), "data-role" => "button", "data-inline" => "true" %><%= link_to 'Shopping Lists', user_lists_path(current_user), "data-role" => "button", "data-inline" => "true" %><%= link_to 'Add Item', new_list_item_url(@list, @item), "data-role" => "button", "data-inline" => "true" %></p>
