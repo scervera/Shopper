@@ -6,7 +6,7 @@
 	  <li>Name: <%= @list.name %></li>  
 </ul>
 
-<ul data-role="listview" data-inset="true" data-icon="delete">
+<ul data-role="listview" data-inset="true" data-icon="delete" data-filter="true" data-filter-placeholder="Search items...">
 		<% @list.items.each do |item|%>
 	  		<li><%= link_to item.name, list_item_path(@list, item.id) %></li> 
 		<%end%>
